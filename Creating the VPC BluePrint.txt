@@ -1,0 +1,16 @@
+Region: us-west-1
+VPC Range 172.20.0.0/16
+4 Subnets: 2 public subnets, 2 private subnets
+2 zones: us-west-1b, us-west-1c
+172.20.1.0/24  =>pub-sub-1[us-west-1b]
+172.20.2.0/24  =>pub-sub-2[us-west-1c]
+172.20.3.0/24  =>priv-sub-1[us-west-1b]
+172.20.4.0/24  =>priv-sub-2[us-west-1c]
+1 internet Gateway
+1 NAT Gateway
+1 EIP
+2 Route Tables: 1 Public Subnet RT, 1 Private Subnet RT
+1 Bastion host in Pub subnet
+
+NACL
+1 more VPC =>VPC Peering
