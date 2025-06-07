@@ -1,19 +1,21 @@
 # DevOps-Projects
 # AWS CI/CD Project
-In this project, we're setting up a CI/CD pipeline using AWS services to automate the deployment process.
+For this project, I set up a CI/CD pipeline using AWS services to automate the build and deployment process.
 
-The source code for our applications is currently on GitHub, but we're migrating everything over to Bitbucket. Once the code is in Bitbucket, we’ll use AWS CodePipeline to detect any new commits.
+I started by migrating our Git repositories from GitHub to Bitbucket. Once everything was in Bitbucket, I configured AWS CodePipeline to monitor those repositories for any new commits.
 
-When there's a new commit in the Bitbucket repository, CodePipeline will kick off the process. It starts by pulling the latest code from Bitbucket and then triggering a build job in AWS CodeBuild. CodeBuild works kind of like Jenkins — it fetches the code, builds it, and produces an artifact (like a ZIP or JAR file).
+Whenever I push new code to Bitbucket, CodePipeline automatically picks up the changes. It then triggers a build using AWS CodeBuild. I set up CodeBuild to function like a Jenkins server — it pulls the source code, builds it, and outputs an artifact (like a ZIP or JAR file).
 
-After the build is complete, we want to deploy the artifact to AWS Elastic Beanstalk. However, there’s no direct option in CodeBuild to deploy to Beanstalk. That’s why we’re using CodePipeline — it connects everything together.
+Since there’s no default option in CodeBuild to deploy directly to Elastic Beanstalk, I used CodePipeline to handle the deployment step as well. After the build completes, CodePipeline takes the artifact and deploys it to an Elastic Beanstalk environment.
 
-So, to summarize:
+In summary:
 
-We have our Git repositories in Bitbucket.
+I moved our code from GitHub to Bitbucket.
 
-CodePipeline watches those repos for changes.
+I set up CodePipeline to detect commits in Bitbucket.
 
-On a new commit, it triggers CodeBuild to build the source into an artifact.
+CodePipeline triggers CodeBuild, which builds the application.
 
-Finally, CodePipeline deploys that artifact to AWS Elastic Beanstalk.
+Finally, CodePipeline deploys the build to AWS Elastic Beanstalk.
+
+This setup gave me a fully automated deployment pipeline, streamlining the release process and removing the need for manual builds or deployments.
