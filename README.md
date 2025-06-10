@@ -1,4 +1,4 @@
-Terraform AWS Setup
+# Terraform AWS Setup
 This project sets up basic AWS infrastructure using Terraform. It includes provider configuration, key pair creation, and a security group with custom ingress and egress rules.
 
 What This Project Does
